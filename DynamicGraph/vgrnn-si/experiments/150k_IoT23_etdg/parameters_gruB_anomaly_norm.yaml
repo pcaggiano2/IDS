@@ -1,0 +1,97 @@
+data: iot23 #HELP: arxiv, bitcoin, aml_sim, dbg, elliptic, elliptic_temporal
+iot23_args:
+  folder: /user/apaolillo/Output_Grafi/split/150k/base/IoT23_dataset_split_etdg
+  folder_iot_traces: /user/apaolillo/Output_Grafi/split_test/150k/base/IoT_traces_dataset_split_etdg
+  folder_iot_id20: /user/apaolillo/Output_Grafi/split_test/150k/base/IoTID20_dataset_split_etdg
+  only_benign: True
+  representation: etdg_graph
+  feats_per_node: 72
+  one_class: True
+  test_sequence: False
+  graph_base_folder: /user/apaolillo/Output_Grafi/150000/IoT23/base/
+  graph_base_iot_traces_folder: /user/apaolillo/Output_Grafi/150000/IoT_traces/base/
+  graph_base_iot_id20_folder: /user/apaolillo/Output_Grafi/150000/IoTID20/base/
+  normalize: True
+  path_min_max_vectors: /user/apaolillo/Output_Grafi/min_max_benign/150k/IoT23_min_max_benign/min_max_etdg_graph
+  sequence: False
+
+use_cuda: True
+use_logfile: True
+train: True
+test: True
+off_line_test: True
+test_epoch: -1
+compute_threshold: True
+
+model: gruB
+
+task: anomaly_detection
+wandb_log: True
+project_name: GRUB_SCALE_64_150k_IoT23_etdg
+save_folder: /user/apaolillo/checkpoint_dir/evolveGCN
+
+class_weights: [ 0.35, 0.65]
+use_2_hot_node_feats: False
+use_1_hot_node_feats: False
+save_node_embeddings: False
+
+num_epochs: 300 #number of passes though the data
+steps_accum_gradients: 1
+learning_rate: 0.0005
+learning_rate_min: 0.0005
+learning_rate_max: 0.0005
+negative_mult_training: 20
+negative_mult_test: 100
+smart_neg_sampling: False
+seed: 42
+target_measure: F1 # measure to define the best epoch F1, Precision, Recall, MRR, MAP
+target_class: 1 # Target class to get the measure to define the best epoch (all, 0, 1)
+early_stop_patience: 25
+
+eval_after_epochs: 1
+adj_mat_time_window: 3
+num_hist_steps: 1 # number of previous steps used for prediction
+num_hist_steps_min: 1
+num_hist_steps_max: 1
+data_loading_params:
+  batch_size: 4
+  num_workers: 8
+
+gcn_parameters:
+  feats_per_node: 72
+  feats_per_node_min: 30
+  feats_per_node_max: 312
+  layer_1_feats: 64
+  layer_1_feats_min: 30
+  layer_1_feats_max: 500
+  layer_2_feats: None
+  layer_2_feats_same_as_l1: True
+  k_top_grcu: 200
+  num_layers: 2
+  lstm_l1_layers: 125
+  lstm_l1_feats: 64  # only used with sp_lstm_B_trainer
+  lstm_l1_feats_min: 50
+  lstm_l1_feats_max: 500
+  lstm_l2_layers: 1 # only used with both sp_lstm_A_trainer and sp_lstm_B_trainer
+  lstm_l2_feats: 400 # only used with both sp_lstm_A_trainer and sp_lstm_B_trainer
+  lstm_l2_feats_same_as_l1: True
+  cls_feats: 307 # Hidden size of the classifier
+  cls_feats_min: 100
+  cls_feats_max: 700
+
+decoder_parameters:
+  sd_nhid: 64 # structure decoder hidden dimension
+  sd_dropout: 0.3 # structure decoder hidden dimension
+  ad_nfeat: 72 # 
+  ad_nhid: 64 #
+  ad_dropout: 0.3 #
+  device_id: 0
+
+loss:
+  weight: 0.7
+  pos_weight_a: 0.5
+  pos_weight_s: 0.5
+  bce_s: False
+
+comments:
+  - comments

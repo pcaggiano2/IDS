@@ -1,0 +1,17 @@
+Processing folder: /Users/pasqualecaggiano/Desktop/Master/Project/PreprocessedDatasets/Bot-IoT
+detection_label
+Malicious    4253085
+Benign          6319
+Name: count, dtype: int64
+Processing folder: /Users/pasqualecaggiano/Desktop/Master/Project/PreprocessedDatasets/IoT23
+detection_label
+Malicious    85839
+Benign       11514
+Name: count, dtype: int64
+Processing folder: /Users/pasqualecaggiano/Desktop/Master/Project/PreprocessedDatasets/IoTID20
+detection_label
+Malicious    217466
+Benign        27490
+Name: count, dtype: int64
+Processing folder: /Users/pasqualecaggiano/Desktop/Master/Project/PreprocessedDatasets/IoT_Traces
+Benign   471800

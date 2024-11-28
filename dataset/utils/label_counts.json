@@ -1,0 +1,158 @@
+[
+    {
+        "out_csv_file": "PreprocessedDatasets/Bot-IoT/DoS_TCP_1.csv",
+        "flow_df_detection_label_counts": {
+            "Malicious": 261854,
+            "Unknown": 290,
+            "Benign": 60
+        },
+        "ground_truth_df_attack_counts": {
+            "1": 12315619,
+            "0": 591
+        }
+    },
+    {
+        "out_csv_file": "/Users/pasqualecaggiano/Desktop/Master/Project/PreprocessedDatasets/Bot-IoT/DoS_TCP_1.csv",
+        "flow_df_detection_label_counts": {
+            "Malicious": 261854,
+            "Unknown": 290,
+            "Benign": 60
+        },
+        "ground_truth_df_attack_counts": {
+            "1": 12315619,
+            "0": 591
+        }
+    },
+    {
+        "out_csv_file": "/Users/pasqualecaggiano/Desktop/Master/Project/PreprocessedDatasets/Bot-IoT/DoS_TCP_2.csv",
+        "flow_df_detection_label_counts": {
+            "Malicious": 253037,
+            "Unknown": 9107,
+            "Benign": 10
+        },
+        "ground_truth_df_attack_counts": {
+            "1": 12315619,
+            "0": 591
+        }
+    },
+    {
+        "out_csv_file": "/Users/pasqualecaggiano/Desktop/Master/Project/PreprocessedDatasets/Bot-IoT/DoS_TCP_3.csv",
+        "flow_df_detection_label_counts": {
+            "Malicious": 244143,
+            "Unknown": 18001,
+            "Benign": 25
+        },
+        "ground_truth_df_attack_counts": {
+            "1": 12315619,
+            "0": 591
+        }
+    },
+    {
+        "out_csv_file": "/Users/pasqualecaggiano/Desktop/Master/Project/PreprocessedDatasets/Bot-IoT/DoS_TCP_4.csv",
+        "flow_df_detection_label_counts": {
+            "Malicious": 242779,
+            "Unknown": 19365,
+            "Benign": 11
+        },
+        "ground_truth_df_attack_counts": {
+            "1": 12315619,
+            "0": 591
+        }
+    },
+    {
+        "out_csv_file": "/Users/pasqualecaggiano/Desktop/Master/Project/PreprocessedDatasets/Bot-IoT/DoS_TCP_5.csv",
+        "flow_df_detection_label_counts": {
+            "Malicious": 235057,
+            "Unknown": 27087,
+            "Benign": 11
+        },
+        "ground_truth_df_attack_counts": {
+            "1": 12315619,
+            "0": 591
+        }
+    },
+    {
+        "out_csv_file": "/Users/pasqualecaggiano/Desktop/Master/Project/PreprocessedDatasets/Bot-IoT/DoS_TCP_6.csv",
+        "flow_df_detection_label_counts": {
+            "Malicious": 480705,
+            "Unknown": 43583,
+            "Benign": 78
+        },
+        "ground_truth_df_attack_counts": {
+            "1": 12315619,
+            "0": 591
+        }
+    },
+    {
+        "out_csv_file": "/Users/pasqualecaggiano/Desktop/Master/Project/PreprocessedDatasets/Bot-IoT/DoS_TCP_7.csv",
+        "flow_df_detection_label_counts": {
+            "Malicious": 721393,
+            "Unknown": 65039,
+            "Benign": 65
+        },
+        "ground_truth_df_attack_counts": {
+            "1": 12315619,
+            "0": 591
+        }
+    },
+    {
+        "out_csv_file": "/Users/pasqualecaggiano/Desktop/Master/Project/PreprocessedDatasets/Bot-IoT/DoS_UDP_1.csv",
+        "flow_df_detection_label_counts": {
+            "Malicious": 784237,
+            "Unknown": 2207,
+            "Benign": 26
+        },
+        "ground_truth_df_attack_counts": {
+            "1": 20658630,
+            "0": 672
+        }
+    },
+    {
+        "out_csv_file": "/Users/pasqualecaggiano/Desktop/Master/Project/PreprocessedDatasets/Bot-IoT/DoS_UDP_2.csv",
+        "flow_df_detection_label_counts": {
+            "Malicious": 522177,
+            "Unknown": 264274,
+            "Benign": 17
+        },
+        "ground_truth_df_attack_counts": {
+            "1": 20658630,
+            "0": 672
+        }
+    },
+    {
+        "out_csv_file": "/Users/pasqualecaggiano/Desktop/Master/Project/PreprocessedDatasets/Bot-IoT/DoS_UDP_3.csv",
+        "flow_df_detection_label_counts": {
+            "Unknown": 524921,
+            "Malicious": 261539,
+            "Benign": 10
+        },
+        "ground_truth_df_attack_counts": {
+            "1": 20658630,
+            "0": 672
+        }
+    },
+    {
+        "out_csv_file": "/Users/pasqualecaggiano/Desktop/Master/Project/PreprocessedDatasets/Bot-IoT/DDoS_TCP_1.csv",
+        "flow_df_detection_label_counts": {
+            "Malicious": 1048599,
+            "Unknown": 262129,
+            "Benign": 33
+        },
+        "ground_truth_df_attack_counts": {
+            "1": 19547104,
+            "0": 620
+        }
+    },
+    {
+        "out_csv_file": "/Users/pasqualecaggiano/Desktop/Master/Project/PreprocessedDatasets/Bot-IoT/DDoS_TCP_2.csv",
+        "flow_df_detection_label_counts": {
+            "Malicious": 863369,
+            "Unknown": 447362,
+            "Benign": 30
+        },
+        "ground_truth_df_attack_counts": {
+            "1": 19547104,
+            "0": 620
+        }
+    }
+]
