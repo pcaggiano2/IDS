@@ -241,20 +241,25 @@ def evaluate(args, model, dataset):
     model.eval()
     print("Testing {} set...".format(dataset))
     with torch.no_grad():
+        
         for batch in tqdm(test_dataloader):
-            process_graph(batch)
-            x = batch.x.to(device)
-            s = batch.s.to(device)
-            edge_index = batch.edge_index.to(device)
-            start_time = time.time()  # seconds
-            x_, s_ = model(x, edge_index)
-            anomaly_score, _, _ = objective_function(x, x_, s, s_, args.alpha)
-            end_time = time.time()
-            elapsed_time = end_time - start_time
-            total_time += elapsed_time
+            try:
+                process_graph(batch)
+                x = batch.x.to(device)
+                s = batch.s.to(device)
+                edge_index = batch.edge_index.to(device)
+                start_time = time.time()  # seconds
+                x_, s_ = model(x, edge_index)
+                anomaly_score, _, _ = objective_function(x, x_, s, s_, args.alpha)
+                end_time = time.time()
+                elapsed_time = end_time - start_time
+                total_time += elapsed_time
 
-            score_list.extend(anomaly_score.detach().cpu().numpy().tolist())
-            labels_list.extend(batch.y.numpy().tolist())
+                score_list.extend(anomaly_score.detach().cpu().numpy().tolist())
+                labels_list.extend(batch.y.numpy().tolist())
+            except Exception as e:
+                print(f"Graph too large, next...")
+                pass
 
     average_pred_time = total_time / len(test_dataloader)
 

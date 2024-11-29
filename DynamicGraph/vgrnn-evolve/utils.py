@@ -151,13 +151,9 @@ def load_data_from_tar(file, tar_archive, replace_unknow=False, starting_line=1,
 def create_parser():
     parser = argparse.ArgumentParser(
         formatter_class=argparse.RawTextHelpFormatter)
-    # type=argparse.FileType(
     parser.add_argument(
-        '--config_file', default='/user/apaolillo/dynamic_graphs/copys/experiments/150k_IoT23_etdg/parameters_egcn_h_anomaly_norm.yaml', type=str)
-    #    mode='r'), help='optional, yaml file containing parameters to be used, overrides command #line parameters')
-    #/user/apaolillo/dynamic_graphs/EvolveGCN/experiments/150k_IoT23_etdg/parameters_egcn_h_anomaly_norm.yaml
+        '--config_file', type=str)
     parser.add_argument('--debug', action='store_true')
-    # parser.add_argument()
     return parser
 
 
@@ -165,11 +161,11 @@ def parse_args(parser):
     args = parser.parse_args()
     if args.config_file:
         print(args.config_file)
-        # data = yaml.load(args.config_file)
+
         with open(args.config_file, 'r') as file:
             data = yaml.safe_load(file)
         delattr(args, 'config_file')
-        # print(data)
+
         arg_dict = args.__dict__
         for key, value in data.items():
             arg_dict[key] = value

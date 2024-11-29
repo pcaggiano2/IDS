@@ -29,7 +29,7 @@ configurations=(
     ## Experiments [DOMINANT_B4_64_90k_NORM_IoT23_tdg]
     # "IoT23/90000/base DOMINANT_B4_64_90k_NORM_IoT23_tdg IoT23/90000/base/IoT23_dataset_split_tdg tdg_graph 1 IoT23 IoT23"
     # "IoTID20/90000/base DOMINANT_B4_64_90k_NORM_IoT23_tdg IoTID20/90000/base/IoTID20_dataset_split_tdg tdg_graph 1 IoT23 IoTID20"
-    "IoT_traces/90000/base DOMINANT_B4_64_90k_NORM_IoT23_tdg IoT_traces/90000/base/IoT_traces_dataset_split_tdg tdg_graph 1 IoT23 IoT_traces"
+    # "IoT_traces/90000/base DOMINANT_B4_64_90k_NORM_IoT23_tdg IoT_traces/90000/base/IoT_traces_dataset_split_tdg tdg_graph 1 IoT23 IoT_traces"
     # "Bot-IoT/90000/base DOMINANT_B4_64_90k_NORM_IoT23_tdg Bot-IoT/90000/base/Bot-IoT_dataset_split_tdg tdg_graph 1 IoT23 Bot-IoT" ## DA FARE
 
     ## Experiments [DOMINANT_B4_64_90k_NORM_IoT23_sim]
@@ -41,13 +41,13 @@ configurations=(
     ## Experiments [DOMINANT_B4_64_120k_NORM_IoT23_tdg]
     # "IoT23/120000/base DOMINANT_B4_64_120k_NORM_IoT23_tdg IoT23/120000/base/IoT23_dataset_split_tdg tdg_graph 1 IoT23 IoT23"
     # "IoTID20/120000/base DOMINANT_B4_64_120k_NORM_IoT23_tdg IoTID20/120000/base/IoTID20_dataset_split_tdg tdg_graph 1 IoT23 IoTID20"
-    # "IoT_traces/120000/base DOMINANT_B4_64_120k_NORM_IoT23_tdg IoT_traces/120000/base/IoT_traces_dataset_split_tdg tdg_graph 1 IoT23 IoT_traces"
+    "IoT_traces/120000/base DOMINANT_B4_64_120k_NORM_IoT23_tdg IoT_traces/120000/base/IoT_traces_dataset_split_tdg tdg_graph 1 IoT23 IoT_traces"
     # "Bot-IoT/120000/base DOMINANT_B4_64_120k_NORM_IoT23_tdg Bot-IoT/120000/base/Bot-IoT_dataset_split_tdg tdg_graph 1 IoT23 Bot-IoT" ## DA FARE
 
     ## Experiments [DOMINANT_B4_64_120k_NORM_IoT23_sim]
     # "IoT23/120000/base DOMINANT_B4_64_120k_NORM_IoT23_sim IoT23/120000/base/IoT23_dataset_split_sim sim_graph 1 IoT23 IoT23"
     # "IoTID20/120000/base DOMINANT_B4_64_120k_NORM_IoT23_sim IoTID20/120000/base/IoTID20_dataset_split_sim sim_graph 1 IoT23 IoTID20"
-    # "IoT_traces/120000/base DOMINANT_B4_64_120k_NORM_IoT23_sim IoT_traces/120000/base/IoT_traces_dataset_split_sim sim_graph 1 IoT23 IoT_traces"
+    "IoT_traces/120000/base DOMINANT_B4_64_120k_NORM_IoT23_sim IoT_traces/120000/base/IoT_traces_dataset_split_sim sim_graph 1 IoT23 IoT_traces"
     # "Bot-IoT/120000/base DOMINANT_B4_64_120k_NORM_IoT23_sim Bot-IoT/120000/base/Bot-IoT_dataset_split_sim sim_graph 1 IoT23 Bot-IoT" ## DA FARE 
 )
 

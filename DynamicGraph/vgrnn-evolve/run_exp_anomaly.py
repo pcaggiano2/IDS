@@ -7,17 +7,11 @@ import random
 import debugpy
 
 # datasets
-import bitcoin_dl as bc
-import elliptic_temporal_dl as ell_temp
 import anomaly
-import uc_irv_mess_dl as ucim
-import auto_syst_dl as aus
-import sbm_dl as sbm
-import reddit_dl as rdt
+
 
 
 # taskers
-import link_pred_tasker as lpt
 import edge_cls_tasker as ect
 import node_cls_tasker as nct
 import node_anomaly_tasker as nat
@@ -113,46 +107,14 @@ def build_random_hyper_params(args):
 
 
 def build_dataset(args):
-    if args.data == 'bitcoinotc' or args.data == 'bitcoinalpha':
-        if args.data == 'bitcoinotc':
-            args.bitcoin_args = args.bitcoinotc_args
-        elif args.data == 'bitcoinalpha':
-            args.bitcoin_args = args.bitcoinalpha_args
-        return bc.bitcoin_dataset(args)
-    elif args.data == 'aml_sim':
-        return aml.Aml_Dataset(args)
-    elif args.data == 'elliptic':
-        return ell.Elliptic_Dataset(args)
-    elif args.data == 'elliptic_temporal':
-        return ell_temp.Elliptic_Temporal_Dataset(args)
-    elif args.data == 'iot23':
+    if args.data == 'iot23':
         return anomaly.Anomaly_Dataset(args)
     elif args.data == 'iot_traces':
         return anomaly.Anomaly_Dataset_traces(args)
-    elif args.data == 'uc_irv_mess':
-        return ucim.Uc_Irvine_Message_Dataset(args)
-    elif args.data == 'dbg':
-        return dbg.dbg_dataset(args)
-    elif args.data == 'colored_graph':
-        return cg.Colored_Graph(args)
-    elif args.data == 'autonomous_syst':
-        return aus.Autonomous_Systems_Dataset(args)
-    elif args.data == 'reddit':
-        return rdt.Reddit_Dataset(args)
-    elif args.data.startswith('sbm'):
-        if args.data == 'sbm20':
-            args.sbm_args = args.sbm20_args
-        elif args.data == 'sbm50':
-            args.sbm_args = args.sbm50_args
-        return sbm.sbm_dataset(args)
-    else:
-        raise NotImplementedError('only arxiv has been implemented')
 
 
 def build_tasker(args, dataset):
-    if args.task == 'link_pred':
-        return lpt.Link_Pred_Tasker(args, dataset)
-    elif args.task == 'edge_cls':
+    if args.task == 'edge_cls':
         return ect.Edge_Cls_Tasker(args, dataset)
     elif args.task == 'node_cls':
         return nct.Node_Cls_Tasker(args, dataset)
@@ -162,7 +124,6 @@ def build_tasker(args, dataset):
         return nat.Anomaly_Detection_Tasker(args, dataset)
     elif args.task == 'anomaly_detection_iot_traces':
         return nat.Anomaly_Detection_Tasker_IoT_traces(args, dataset)
-
     else:
         raise NotImplementedError('still need to implement the other tasks')
 
@@ -186,8 +147,6 @@ def build_gcn(args, tasker):
             return mls.Sp_GCN_LSTM_B(gcn_args, activation=torch.nn.RReLU()).to(args.device)
         elif args.model == 'gruB':
             return mls.Sp_GCN_GRU_B(gcn_args, activation=torch.nn.RReLU()).to(args.device)
-        elif args.model == 'egcn':
-            return egcn.EGCN(gcn_args, activation=torch.nn.RReLU()).to(args.device)
         elif args.model == 'egcn_h':
             return egcn_h.EGCN(gcn_args, activation=torch.nn.RReLU(), device=args.device)
         elif args.model == 'skipfeatsegcn_h':
@@ -273,8 +232,11 @@ if __name__ == '__main__':
     global rank, wsize, use_cuda
     args.use_cuda = (torch.cuda.is_available() and args.use_cuda)
     args.device = 'cpu'
-    #if args.use_cuda:
-    #    args.device = 'cuda'
+    if args.use_cuda:
+        args.device = 'cuda'
+    else:
+        args.device = 'mps'
+        #args.device = 'cpu'
     print("use CUDA:", args.use_cuda, "- device:", args.device)
     try:
         dist.init_process_group(backend='mpi')  # , world_size=4
@@ -295,6 +257,7 @@ if __name__ == '__main__':
         seed = 123+rank  # int(time.time())+rank
     else:
         seed = args.seed  # +rank
+
     np.random.seed(seed)
     random.seed(seed)
     torch.manual_seed(seed)
@@ -305,7 +268,7 @@ if __name__ == '__main__':
     args.wsize = wsize
 
     # Assign the requested random hyper parameters
-    args = build_random_hyper_params(args)
+    args = build_random_hyper_params(args) #Secondo me non si deve eseguire perchè già fatta nel parse_args
 
     # build the dataset
     dataset = build_dataset(args)

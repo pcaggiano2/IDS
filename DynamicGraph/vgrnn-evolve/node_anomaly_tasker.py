@@ -180,14 +180,6 @@ class Anomaly_Detection_Tasker():
             row_index, col_index = np.unravel_index(
                 max_feature_index, features.shape)
 
-            # print(
-            #     f"Max {np.max(features)}; {self.data.min_vector[col_index]}, {self.data.max_vector[col_index]}")
-            # assert np.max(
-            #     features) <= 1.0, f"max {np.max(features)}: {capture}-{graph_type}-{graph_name}"
-            # assert np.count_nonzero(
-            #     features < 0.0) == 0, f"input < 0.0: {np.max(features)}: {capture}-{graph_type}-{graph_name}"
-            # assert np.count_nonzero(np.isnan(
-            #     features)) == 0, f"Input nan: {np.max(features)}: {capture}-{graph_type}-{graph_name}"
         new_features = np.zeros((num_nodes, self.feats_per_node))
         old_to_new_id_map = np.array(graph['features_new_old_map'])
         new_features[old_to_new_id_map[:, 1]

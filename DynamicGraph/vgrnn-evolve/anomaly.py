@@ -46,7 +46,8 @@ class Anomaly_Dataset():
             self.num_classes = 2
 
     def create_graph_list(self):
-        capture_paths = glob.glob(f"{self.dataset_path}/CTU-Honeypot-*")
+        # capture_paths = glob.glob(f"{self.dataset_path}/CTU-Honeypot-*")
+        capture_paths = glob.glob(f"{self.dataset_path}/*")
 
         for capture in capture_paths:
             print(f"Loading capture {capture}")
