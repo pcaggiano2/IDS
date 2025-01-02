@@ -23,6 +23,14 @@ configurations=(
     # "IoT23/120000/base DOMINANT_B4_64_120k_NORM_IoT23_tdg IoT23/120000/base/IoT23_dataset_split_tdg tdg_graph 1 IoT23"
     
     # "IoT23/120000/base DOMINANT_B4_64_120k_NORM_IoT23_sim IoT23/120000/base/IoT23_dataset_split_sim sim_graph 1 IoT23"
+
+    # 5 Folds - Cross Validation - On Best  DOMINANT_B4_64_60k_NORM_IoT23_sim
+    "IoT23/60000/base DOMINANT_B4_64_60k_NORM_IoT23_sim IoT23/60000/base/5folds sim_graph 1 IoT23 1"
+    # fold 2 gia fatto
+    "IoT23/60000/base DOMINANT_B4_64_60k_NORM_IoT23_sim IoT23/60000/base/5folds sim_graph 1 IoT23 3"
+    "IoT23/60000/base DOMINANT_B4_64_60k_NORM_IoT23_sim IoT23/60000/base/5folds sim_graph 1 IoT23 4"
+    "IoT23/60000/base DOMINANT_B4_64_60k_NORM_IoT23_sim IoT23/60000/base/5folds sim_graph 1 IoT23 5"
+
 )
 
 # Change to base directory
@@ -31,12 +39,12 @@ cd "$BASE_PATH" || { echo "BASE_PATH directory not found!"; exit 1; }
 # Iterate over each configuration string
 for config in "${configurations[@]}"; do
     # Read the configuration string into variables
-    read -r DATA_FOLD MODEL JSON_FOLD GRAPH_TYPE NORM MINMAX <<< "$config"
+    read -r DATA_FOLD MODEL JSON_FOLD GRAPH_TYPE NORM MINMAX FOLD_IDX <<< "$config"
 
     DATASET_FOLDER="$GRAPHS_PATH/$DATA_FOLD"
     JSON_FOLDER="$SPLITS_PATH/$JSON_FOLD"
-    CHECKPOINT_FOLDER="$CHECKPOINTS_PATH/$MODEL/checkpoints"
-    THRESHOLD_PATH="$CHECKPOINTS_PATH/$MODEL/thresholds"
+    CHECKPOINT_FOLDER="$CHECKPOINTS_PATH/$MODEL/fold$FOLD_IDX/checkpoints"
+    THRESHOLD_PATH="$CHECKPOINTS_PATH/$MODEL/fold$FOLD_IDX/thresholds"
     MINMAX_PATH="$SPLITS_PATH/$MINMAX"
 
     echo "Processing configuration:"    
@@ -45,6 +53,8 @@ for config in "${configurations[@]}"; do
     echo "$JSON_FOLDER"
     echo "$GRAPH_TYPE"
     echo "$THRESHOLD_PATH"
+    echo "$FOLD_IDX"
+
 
     # Ensure the output and checkpoint directories exist
     mkdir -p "$CHECKPOINT_FOLDER" "$CSV_RESULT_PATH"
@@ -57,7 +67,8 @@ for config in "${configurations[@]}"; do
         --checkpoint_path "$CHECKPOINT_FOLDER" \
         --threshold_path "$THRESHOLD_PATH" \
         --normalize "$NORM" \
-        --min_max "$MINMAX_PATH"
+        --min_max "$MINMAX_PATH" \
+        --fold_idx "$FOLD_IDX"
 
 done
 

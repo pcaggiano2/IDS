@@ -30,6 +30,14 @@ configurations=(
     # "/Users/pasqualecaggiano/Desktop/Master/Project/GraphsSplit/IoT23/120000/base/IoT23_dataset_split_sim/ test_malicious.json single_capture_modified test 0.8"  
     # "/Users/pasqualecaggiano/Desktop/Master/Project/GraphsSplit/IoT23/120000/base/IoT23_dataset_split_sim/ test_mixed.json single_capture_modified test 0.8"
 
+    "/Users/pasqualecaggiano/Desktop/Master/Project/GraphsSplit/IoT23/150000/base/IoT23_dataset_split_tdg/ test_benign.json single_capture_modified train_val 0.8"
+    "/Users/pasqualecaggiano/Desktop/Master/Project/GraphsSplit/IoT23/150000/base/IoT23_dataset_split_tdg/ test_malicious.json single_capture_modified test 0.8"  
+    "/Users/pasqualecaggiano/Desktop/Master/Project/GraphsSplit/IoT23/150000/base/IoT23_dataset_split_tdg/ test_mixed.json single_capture_modified test 0.8"
+
+    "/Users/pasqualecaggiano/Desktop/Master/Project/GraphsSplit/IoT23/150000/base/IoT23_dataset_split_sim/ test_benign.json single_capture_modified train_val 0.8"
+    "/Users/pasqualecaggiano/Desktop/Master/Project/GraphsSplit/IoT23/150000/base/IoT23_dataset_split_sim/ test_malicious.json single_capture_modified test 0.8"  
+    "/Users/pasqualecaggiano/Desktop/Master/Project/GraphsSplit/IoT23/150000/base/IoT23_dataset_split_sim/ test_mixed.json single_capture_modified test 0.8"
+
     #IoTID20
     # "/Users/pasqualecaggiano/Desktop/Master/Project/GraphsSplit/IoTID20/60000/base/IoTID20_dataset_split_tdg/ test_benign.json single_capture_modified test 0.8"
     # "/Users/pasqualecaggiano/Desktop/Master/Project/GraphsSplit/IoTID20/60000/base/IoTID20_dataset_split_tdg/ test_malicious.json single_capture_modified test 0.8"  
@@ -54,6 +62,14 @@ configurations=(
     # "/Users/pasqualecaggiano/Desktop/Master/Project/GraphsSplit/IoTID20/120000/base/IoTID20_dataset_split_sim/ test_benign.json single_capture_modified test 0.8"
     # "/Users/pasqualecaggiano/Desktop/Master/Project/GraphsSplit/IoTID20/120000/base/IoTID20_dataset_split_sim/ test_malicious.json single_capture_modified test 0.8"  
     # "/Users/pasqualecaggiano/Desktop/Master/Project/GraphsSplit/IoTID20/120000/base/IoTID20_dataset_split_sim/ test_mixed.json single_capture_modified test 0.8"
+
+    "/Users/pasqualecaggiano/Desktop/Master/Project/GraphsSplit/IoTID20/150000/base/IoTID20_dataset_split_tdg/ test_benign.json single_capture_modified test 0.8"
+    "/Users/pasqualecaggiano/Desktop/Master/Project/GraphsSplit/IoTID20/150000/base/IoTID20_dataset_split_tdg/ test_malicious.json single_capture_modified test 0.8"  
+    "/Users/pasqualecaggiano/Desktop/Master/Project/GraphsSplit/IoTID20/150000/base/IoTID20_dataset_split_tdg/ test_mixed.json single_capture_modified test 0.8"
+
+    "/Users/pasqualecaggiano/Desktop/Master/Project/GraphsSplit/IoTID20/150000/base/IoTID20_dataset_split_sim/ test_benign.json single_capture_modified test 0.8"
+    "/Users/pasqualecaggiano/Desktop/Master/Project/GraphsSplit/IoTID20/150000/base/IoTID20_dataset_split_sim/ test_malicious.json single_capture_modified test 0.8"  
+    "/Users/pasqualecaggiano/Desktop/Master/Project/GraphsSplit/IoTID20/150000/base/IoTID20_dataset_split_sim/ test_mixed.json single_capture_modified test 0.8"
 
 )
 

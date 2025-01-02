@@ -284,6 +284,11 @@ if __name__ == '__main__':
 
     parser.add_argument("--debug",
                         action='store_true')
+    
+    parser.add_argument("--fold_idx",
+                    default=0,
+                    type=int,
+                    help='number of fold, if 0 no cross-validation')
 
     args = parser.parse_args()
 
@@ -299,7 +304,14 @@ if __name__ == '__main__':
         debugpy.wait_for_client()
 
     # Dataloaders definition
-    json_validation_set = os.path.join(args.json_folder, "val.json")
+    if args.fold_idx == 0:
+        # Dataloaders definition
+        json_validation_set = os.path.join(args.json_folder, "val.json")
+    else:
+        # Dataloaders Cross Validation definition
+        json_validation_set = os.path.join(args.json_folder, "val" + str(args.fold_idx) + ".json")
+
+
     graph_set = Graph_dataset(dataset_path=args.dataset_folder,
                               json_path=json_validation_set,
                               representation=args.graph_type,

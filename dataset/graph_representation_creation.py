@@ -17,6 +17,22 @@ import math
 REP_LIST = ["TDG", "eTDG", "SIM", "ALL"]
 
 def create_similarity_graph(snapshot_data, snapshot_features, interval_number=None, k=5):
+    id = 0
+    node_ids_dict = {}  # this dict maps (ip, port) -> node_id
+    node_reverse_dict = {} 
+    for i in range(snapshot_data.shape[0]):
+        flow = snapshot_data[i]
+        src_ip = flow[2]
+        src_port = flow[5]
+        dst_ip = flow[6]
+        dst_port = flow[9]
+        src_node = (src_ip, src_port)
+        dst_node = (dst_ip, dst_port)
+        if (src_node, dst_node) not in node_ids_dict:
+            node_ids_dict[(src_node, dst_node)] = id
+            node_reverse_dict[id] = (src_node, dst_node)
+            id += 1
+    
     features_matrix = np.zeros(
         (snapshot_data.shape[0], snapshot_features.shape[1]), dtype=float)
     adj_matrix = np.zeros(
@@ -58,7 +74,7 @@ def create_similarity_graph(snapshot_data, snapshot_features, interval_number=No
         node_list2.append(flow_id1)
     node_array1 = np.array(node_list1, dtype=np.uint32)
     node_array2 = np.array(node_list2, dtype=np.uint32)
-    return features_matrix, adj_matrix, labels_matrix, (node_array1, node_array2)
+    return features_matrix, adj_matrix, labels_matrix, (node_array1, node_array2), node_reverse_dict
 
 
 def create_trajectory_graph(snapshot_data, snapshot_mat, snapshot_features, interval_number, log_file):

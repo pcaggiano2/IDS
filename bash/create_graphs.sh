@@ -28,10 +28,10 @@ configurations=(
     # "IoT_Traces 150000 IoT_traces/150000/base/"
     
     # # Uncomment the following lines for Bot-IoT configurations
-    "Bot-IoT 60000 Bot-IoT/60000/base/"
-    "Bot-IoT 90000 Bot-IoT/90000/base/"
-    "Bot-IoT 120000 Bot-IoT/120000/base/"
-    "Bot-IoT 150000 Bot-IoT/150000/base/"
+    # "Bot-IoT 60000 Bot-IoT/60000/base/"
+    # "Bot-IoT 90000 Bot-IoT/90000/base/"
+    # "Bot-IoT 120000 Bot-IoT/120000/base/"
+    # "Bot-IoT 150000 Bot-IoT/150000/base/"
 )
 
 # Change to base directory

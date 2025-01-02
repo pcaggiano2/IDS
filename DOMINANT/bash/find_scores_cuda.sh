@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Set the CUDA device to use
-export CUDA_VISIBLE_DEVICES=3
+export CUDA_VISIBLE_DEVICES=0
 
 # Define the base paths and constant values
 GRAPHS_PATH="/user/pcaggiano/Graphs"

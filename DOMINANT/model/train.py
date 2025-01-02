@@ -66,9 +66,14 @@ def train(args):
         ['epoch', 'loss', 'struct_loss', 'feat_loss', 'time_per_epoch'])
     val_writer.writerow(['epoch', 'loss', 'struct_loss', 'feat_loss'])
 
-    # Dataloaders definition
-    json_training_set = os.path.join(args.json_folder, "train.json")
-    json_validation_set = os.path.join(args.json_folder, "val.json")
+    if args.fold_idx == 0:
+        # Dataloaders definition
+        json_training_set = os.path.join(args.json_folder, "train.json")
+        json_validation_set = os.path.join(args.json_folder, "val.json")
+    else:
+        # Dataloaders Cross Validation definition
+        json_training_set = os.path.join(args.json_folder, "train" + str(args.fold_idx) + ".json")
+        json_validation_set = os.path.join(args.json_folder, "val" + str(args.fold_idx) + ".json")
 
     # dataset_path, json_path, representation
     train = Graph_dataset(args.dataset_folder,
@@ -341,6 +346,11 @@ if __name__ == "__main__":
 
     parser.add_argument("--debug",
                         action='store_true')
+    
+    parser.add_argument("--fold_idx",
+                        default=0,
+                        type=int,
+                        help='number of fold, if 0 no cross-validation')
 
     args = parser.parse_args()
 
@@ -351,36 +361,3 @@ if __name__ == "__main__":
         debugpy.wait_for_client()
 
     train(args)
-
-    # # Dataloaders definition
-    # json_training_set = os.path.join(args.json_folder, "train.json")
-    # json_validation_set = os.path.join(args.json_folder, "val.json")
-
-    # # dataset_path, json_path, representation
-    # train = Graph_dataset(args.dataset_folder,
-    #                       json_training_set,
-    #                       args.graph_type,
-    #                       args.normalize,
-    #                       args.min_max)
-    # # Passare min_max perchè non è in base
-    # val = Graph_dataset(args.dataset_folder,
-    #                     json_validation_set, 
-    #                     args.graph_type,
-    #                     args.normalize,
-    #                     args.min_max)
-
-    # train_dataloader = DataLoader(
-    #     train,
-    #     batch_size=1,  # args.batch_size,
-    #     num_workers=0,
-    #     shuffle=True)
-
-    # val_dataloader = DataLoader(
-    #     val,
-    #     batch_size=1,  # args.batch_size,
-    #     num_workers=0,
-    #     shuffle=True)
-
-
-    # print(train.get(0))
-    # print(val.get(0))

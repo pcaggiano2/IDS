@@ -45,7 +45,7 @@ class Graph_dataset(Dataset):
 
 
 def create_path(capture, representation, set_type, graph_name):
-    if set_type == "train" or set_type == "val" or set_type == "test_benign":
+    if "train" in set_type or "val" in set_type or set_type == "test_benign":
         path = os.path.join(capture, representation, "full_benign", graph_name)
     elif set_type == "test_mixed":
         path = os.path.join(capture, representation, "mixed", graph_name)

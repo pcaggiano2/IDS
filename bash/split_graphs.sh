@@ -24,10 +24,10 @@ configurations=(
     # "IoTID20/150000/base 0.8 0.8"
 
     # Uncomment the following lines for IoTID20 configurations
-    "Bot-IoT/60000/base 0.8 0.8"
-    "Bot-IoT/90000/base 0.8 0.8"
-    "Bot-IoT/120000/base 0.8 0.8"
-    # "IoTID20/150000/base 0.8 0.8"
+    # "Bot-IoT/60000/base 0.8 0.8"
+    # "Bot-IoT/90000/base 0.8 0.8"
+    # "Bot-IoT/120000/base 0.8 0.8"
+    "Bot-IoT/150000/base 0.8 0.8"
 )
 
 # Change to base directory

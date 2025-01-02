@@ -349,6 +349,11 @@ if __name__ == '__main__':
 
     parser.add_argument("--wandb_log",
                         action='store_true')
+    
+    parser.add_argument("--fold_idx",
+                default=0,
+                type=int,
+                help='number of fold, if 0 no cross-validation')
 
     args = parser.parse_args()
 
@@ -373,16 +378,20 @@ if __name__ == '__main__':
     model = get_best_model(args, os.path.join(
         args.checkpoint_path, args.graph_type))
 
-    if args.dataset == "IoT23":
-        datasets = ["val.json",
-                    "test_malicious.json", 
-                    "test_mixed.json"]
-    elif args.dataset == "IoT_traces":
-        datasets = ["test_benign.json"]
-    elif args.dataset == "IoTID20":
-        datasets = ["test_benign.json", "test_mixed.json"]
-    elif args.dataset == "Bot-IoT":
-        datasets = ["test_benign.json", "test_malicious.json","test_mixed.json"]
+    if args.fold_idx == 0:
+        if args.dataset == "IoT23":
+            datasets = ["val.json",
+                        "test_malicious.json", 
+                        "test_mixed.json"]
+        elif args.dataset == "IoT_traces":
+            datasets = ["test_benign.json"]
+        elif args.dataset == "IoTID20":
+            datasets = ["test_benign.json", "test_mixed.json"]
+        elif args.dataset == "Bot-IoT":
+            datasets = ["test_benign.json", "test_malicious.json","test_mixed.json"]
+    else:
+        datasets = ["val" + str(args.fold_idx) + ".json"]
+        
 
     for dataset in datasets:
         print(

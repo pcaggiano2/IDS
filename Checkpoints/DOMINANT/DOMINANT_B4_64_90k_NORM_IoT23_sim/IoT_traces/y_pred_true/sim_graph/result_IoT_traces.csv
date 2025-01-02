@@ -1,2 +1,0 @@
-Set,Accuracy,Precision,Recall,F-Score,TP,TN,FP,FN,Average pred time(ms)
-test_benign.json,0.5585332768122085,0,0,0,0,263516,208284,0,33.96069173034764

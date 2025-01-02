@@ -15,30 +15,41 @@ configurations=(
     # "/Users/pasqualecaggiano/Desktop/Master/Project/GraphsSplit/IoT_traces/120000/base/IoT_traces_dataset_split_tdg/ test_benign.json"
     # "/Users/pasqualecaggiano/Desktop/Master/Project/GraphsSplit/IoT_traces/120000/base/IoT_traces_dataset_split_sim/ test_benign.json"
 
+    # "/Users/pasqualecaggiano/Desktop/Master/Project/GraphsSplit/IoT_traces/150000/base/IoT_traces_dataset_split_tdg/ test_benign.json"
+    # "/Users/pasqualecaggiano/Desktop/Master/Project/GraphsSplit/IoT_traces/150000/base/IoT_traces_dataset_split_sim/ test_benign.json"
+
     # Bot-IoT
     # "/Users/pasqualecaggiano/Desktop/Master/Project/GraphsSplit/Bot-IoT/60000/base/Bot-IoT_dataset_split_tdg/ test_benign.json"
     # "/Users/pasqualecaggiano/Desktop/Master/Project/GraphsSplit/Bot-IoT/60000/base/Bot-IoT_dataset_split_tdg/ test_malicious.json"  
     # "/Users/pasqualecaggiano/Desktop/Master/Project/GraphsSplit/Bot-IoT/60000/base/Bot-IoT_dataset_split_tdg/ test_mixed.json "
 
-    "/Users/pasqualecaggiano/Desktop/Master/Project/GraphsSplit/Bot-IoT/60000/base/Bot-IoT_dataset_split_sim/ test_benign.json"
-    "/Users/pasqualecaggiano/Desktop/Master/Project/GraphsSplit/Bot-IoT/60000/base/Bot-IoT_dataset_split_sim/ test_malicious.json"  
-    "/Users/pasqualecaggiano/Desktop/Master/Project/GraphsSplit/Bot-IoT/60000/base/Bot-IoT_dataset_split_sim/ test_mixed.json"
+    # "/Users/pasqualecaggiano/Desktop/Master/Project/GraphsSplit/Bot-IoT/60000/base/Bot-IoT_dataset_split_sim/ test_benign.json"
+    # "/Users/pasqualecaggiano/Desktop/Master/Project/GraphsSplit/Bot-IoT/60000/base/Bot-IoT_dataset_split_sim/ test_malicious.json"  
+    # "/Users/pasqualecaggiano/Desktop/Master/Project/GraphsSplit/Bot-IoT/60000/base/Bot-IoT_dataset_split_sim/ test_mixed.json"
     
-    "/Users/pasqualecaggiano/Desktop/Master/Project/GraphsSplit/Bot-IoT/90000/base/Bot-IoT_dataset_split_tdg/ test_benign.json"
-    "/Users/pasqualecaggiano/Desktop/Master/Project/GraphsSplit/Bot-IoT/90000/base/Bot-IoT_dataset_split_tdg/ test_malicious.json"  
-    "/Users/pasqualecaggiano/Desktop/Master/Project/GraphsSplit/Bot-IoT/90000/base/Bot-IoT_dataset_split_tdg/ test_mixed.json"
+    # "/Users/pasqualecaggiano/Desktop/Master/Project/GraphsSplit/Bot-IoT/90000/base/Bot-IoT_dataset_split_tdg/ test_benign.json"
+    # "/Users/pasqualecaggiano/Desktop/Master/Project/GraphsSplit/Bot-IoT/90000/base/Bot-IoT_dataset_split_tdg/ test_malicious.json"  
+    # "/Users/pasqualecaggiano/Desktop/Master/Project/GraphsSplit/Bot-IoT/90000/base/Bot-IoT_dataset_split_tdg/ test_mixed.json"
 
-    "/Users/pasqualecaggiano/Desktop/Master/Project/GraphsSplit/Bot-IoT/90000/base/Bot-IoT_dataset_split_sim/ test_benign.json"
-    "/Users/pasqualecaggiano/Desktop/Master/Project/GraphsSplit/Bot-IoT/90000/base/Bot-IoT_dataset_split_sim/ test_malicious.json"  
-    "/Users/pasqualecaggiano/Desktop/Master/Project/GraphsSplit/Bot-IoT/90000/base/Bot-IoT_dataset_split_sim/ test_mixed.json"
+    # "/Users/pasqualecaggiano/Desktop/Master/Project/GraphsSplit/Bot-IoT/90000/base/Bot-IoT_dataset_split_sim/ test_benign.json"
+    # "/Users/pasqualecaggiano/Desktop/Master/Project/GraphsSplit/Bot-IoT/90000/base/Bot-IoT_dataset_split_sim/ test_malicious.json"  
+    # "/Users/pasqualecaggiano/Desktop/Master/Project/GraphsSplit/Bot-IoT/90000/base/Bot-IoT_dataset_split_sim/ test_mixed.json"
 
-    "/Users/pasqualecaggiano/Desktop/Master/Project/GraphsSplit/Bot-IoT/120000/base/Bot-IoT_dataset_split_tdg/ test_benign.json"
-    "/Users/pasqualecaggiano/Desktop/Master/Project/GraphsSplit/Bot-IoT/120000/base/Bot-IoT_dataset_split_tdg/ test_malicious.json"  
-    "/Users/pasqualecaggiano/Desktop/Master/Project/GraphsSplit/Bot-IoT/120000/base/Bot-IoT_dataset_split_tdg/ test_mixed.json"
+    # "/Users/pasqualecaggiano/Desktop/Master/Project/GraphsSplit/Bot-IoT/120000/base/Bot-IoT_dataset_split_tdg/ test_benign.json"
+    # "/Users/pasqualecaggiano/Desktop/Master/Project/GraphsSplit/Bot-IoT/120000/base/Bot-IoT_dataset_split_tdg/ test_malicious.json"  
+    # "/Users/pasqualecaggiano/Desktop/Master/Project/GraphsSplit/Bot-IoT/120000/base/Bot-IoT_dataset_split_tdg/ test_mixed.json"
 
-    "/Users/pasqualecaggiano/Desktop/Master/Project/GraphsSplit/Bot-IoT/120000/base/Bot-IoT_dataset_split_sim/ test_benign.json"
-    "/Users/pasqualecaggiano/Desktop/Master/Project/GraphsSplit/Bot-IoT/120000/base/Bot-IoT_dataset_split_sim/ test_malicious.json"  
-    "/Users/pasqualecaggiano/Desktop/Master/Project/GraphsSplit/Bot-IoT/120000/base/Bot-IoT_dataset_split_sim/ test_mixed.json"
+    # "/Users/pasqualecaggiano/Desktop/Master/Project/GraphsSplit/Bot-IoT/120000/base/Bot-IoT_dataset_split_sim/ test_benign.json"
+    # "/Users/pasqualecaggiano/Desktop/Master/Project/GraphsSplit/Bot-IoT/120000/base/Bot-IoT_dataset_split_sim/ test_malicious.json"  
+    # "/Users/pasqualecaggiano/Desktop/Master/Project/GraphsSplit/Bot-IoT/120000/base/Bot-IoT_dataset_split_sim/ test_mixed.json"
+
+    "/Users/pasqualecaggiano/Desktop/Master/Project/GraphsSplit/Bot-IoT/150000/base/Bot-IoT_dataset_split_tdg/ test_benign.json"
+    "/Users/pasqualecaggiano/Desktop/Master/Project/GraphsSplit/Bot-IoT/150000/base/Bot-IoT_dataset_split_tdg/ test_malicious.json"  
+    "/Users/pasqualecaggiano/Desktop/Master/Project/GraphsSplit/Bot-IoT/150000/base/Bot-IoT_dataset_split_tdg/ test_mixed.json"
+
+    "/Users/pasqualecaggiano/Desktop/Master/Project/GraphsSplit/Bot-IoT/150000/base/Bot-IoT_dataset_split_sim/ test_benign.json"
+    "/Users/pasqualecaggiano/Desktop/Master/Project/GraphsSplit/Bot-IoT/150000/base/Bot-IoT_dataset_split_sim/ test_malicious.json"  
+    "/Users/pasqualecaggiano/Desktop/Master/Project/GraphsSplit/Bot-IoT/150000/base/Bot-IoT_dataset_split_sim/ test_mixed.json"
 )
 
 # Change to base directory
